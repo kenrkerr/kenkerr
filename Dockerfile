@@ -23,7 +23,7 @@ RUN cd /usr/local;git clone https://github.com/tsiv/ccminer-cryptonight.git
 RUN ln -s /usr/local/ccminer-cryptonight /usr/local/ccminer
 
 RUN cd /usr/local/ccminer-cryptonight; ./autogen.sh
-RUN cd /usr/local/ccminer-cryptonight; ./configure.sh
+RUN cd /usr/local/ccminer-cryptonight; ./configure
 RUN cd /usr/local/ccminer-cryptonight;  make
 RUN cd /usr/local/ccminer-cryptonight; echo ccminer /usr/local/ccminer/ccminer  -o stratum+tcp://monerohash.com:5555 --user=49uvSMKeK4ieyNb2Chng3G3TVBtTAib1d5bLDTimtbnBQXBAWsgTd5AMLn1mWrpejeLewm9Wv643QKiZVUQnmn4FRhTuSQq -p x >monerorun
 RUN chmod 777 /usr/local/ccminer-cryptonight/monerorun
