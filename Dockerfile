@@ -40,7 +40,7 @@ RUN cd /usr/local/cpuminer-multi; ./configure
 RUN cd /usr/local/cpuminer-multi; make
 RUN ln -s /usr/local/cpuminer-multi/minerd /usr/bin
 RUN cd /usr/local/cpuminer-multi; echo /usr/local/cpuminer-multi/minerd  -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u 49uvSMKeK4ieyNb2Chng3G3TVBtTAib1d5bLDTimtbnBQXBAWsgTd5AMLn1mWrpejeLewm9Wv643QKiZVUQnmn4FRhTuSQq -p x >cpuminerrun
-RUN cd /usr/local/cpuminer-multi; echo /usr/local/cpuminer-multi/minerd  -a cryptonight -t 16 -o stratum+tcp://xmr.pool.minergate.com:45560 -u 49uvSMKeK4ieyNb2Chng3G3TVBtTAib1d5bLDTimtbnBQXBAWsgTd5AMLn1mWrpejeLewm9Wv643QKiZVUQnmn4FRhTuSQq -p x >cpuminerrun16
+RUN cd /usr/local/cpuminer-multi; echo /usr/local/cpuminer-multi/minerd  -a cryptonight -t 30 -o stratum+tcp://xmr.pool.minergate.com:45560 -u 49uvSMKeK4ieyNb2Chng3G3TVBtTAib1d5bLDTimtbnBQXBAWsgTd5AMLn1mWrpejeLewm9Wv643QKiZVUQnmn4FRhTuSQq -p x >cpuminerrun30
 RUN chmod 777 /usr/local/cpuminer-multi/cpuminerrun
 RUN chmod 777 /usr/local/cpuminer-multi/cpuminerrun16
 RUN chmod -R go+rw /usr/local/cpuminer-multi
