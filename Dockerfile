@@ -27,6 +27,7 @@ RUN cd /usr/local/ccminer; sed -i.bak 's/aclocal/aclocal -I m4/' autogen.sh
 RUN cd /usr/local/ccminer; (echo "ACLOCAL_AMFLAGS = -I m4";cat Makefile.am )>xxxx;mv xxxx Makefile.am
 
 RUN cd /usr/local/ccminer; echo ./autogen.sh>run.sh;echo ./configure>>run.sh;echo make>>run.sh;echo ls -l>>run.sh; chmod 777 run.sh
+RUN chmod -R go+rw /usr/local/ccminer
 
 ADD ./NAE/help.html /etc/NAE/help.html
 
