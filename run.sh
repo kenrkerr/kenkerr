@@ -1,1 +1,1 @@
-‘./autogen.sh’
+ps $*

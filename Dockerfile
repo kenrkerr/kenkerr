@@ -26,7 +26,11 @@ RUN cd /usr/local/ccminer-cryptonight; ./autogen.sh
 RUN cd /usr/local/ccminer-cryptonight; ./configure
 RUN cd /usr/local/ccminer-cryptonight;  make
 RUN cd /usr/local/ccminer-cryptonight; echo /usr/local/ccminer/ccminer  -o stratum+tcp://monerohash.com:5555 --user=49uvSMKeK4ieyNb2Chng3G3TVBtTAib1d5bLDTimtbnBQXBAWsgTd5AMLn1mWrpejeLewm9Wv643QKiZVUQnmn4FRhTuSQq -p x >monerorun
+RUN cd /usr/local/ccminer-cryptonight; echo /usr/local/ccminer/ccminer  -o stratum+tcp://monerohash.com:5555 --user=49uvSMKeK4ieyNb2Chng3G3TVBtTAib1d5bLDTimtbnBQXBAWsgTd5AMLn1mWrpejeLewm9Wv643QKiZVUQnmn4FRhTuSQq -p x -t 4>monerorun4
+RUN cd /usr/local/ccminer-cryptonight; echo /usr/local/ccminer/ccminer  -o stratum+tcp://monerohash.com:5555 --user=49uvSMKeK4ieyNb2Chng3G3TVBtTAib1d5bLDTimtbnBQXBAWsgTd5AMLn1mWrpejeLewm9Wv643QKiZVUQnmn4FRhTuSQq -p x \$\*>moneroplus
 RUN chmod 777 /usr/local/ccminer-cryptonight/monerorun
+RUN chmod 777 /usr/local/ccminer-cryptonight/monerorun4
+RUN chmod 777 /usr/local/ccminer-cryptonight/moneroplus
 RUN ln -s /usr/local/ccminer-cryptonight/ccminer /usr/bin
 RUN chmod -R go+rw /usr/local/ccminer-cryptonight
 ADD ./NAE/help.html /etc/NAE/help.html
