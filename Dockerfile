@@ -9,7 +9,7 @@ RUN apt-get update
 
 RUN apt-get -y -q install git  
 RUN apt-get -y -q install autotools-dev 
-RUN apt-get -y -q install build-essential 
+RUN apt-get -y -q install build-essential
 RUN apt-get -y -q install automake 
 RUN apt-get -y -q install openssl 
 RUN apt-get -y -q install libssl1.0.0 
@@ -26,8 +26,11 @@ RUN cd /usr/local/ccminer; sed -i.bak 's/aclocal/aclocal -I m4/' autogen.sh
 
 RUN cd /usr/local/ccminer; (echo "ACLOCAL_AMFLAGS = -I m4";cat Makefile.am )>xxxx;mv xxxx Makefile.am
 
-RUN cd /usr/local/ccminer; echo ./autogen.sh>run.sh;echo ./configure>>run.sh;echo make>>run.sh;echo ls -l>>run.sh; chmod 777 run.sh
-RUN chmod -R go+rw /usr/local/ccminer
+RUN cd /usr/local/ccminer; ./autogen.sh
+RUN cd /usr/local/ccminer; ./configure
+RUN cd /usr/local/ccminer; sed -i.bak s/-abi=no/-abi=yes/ Makefile
+RUN cd /usr/local/ccminer;  make
 
+RUN chmod -R go+rw /usr/local/ccminer
 ADD ./NAE/help.html /etc/NAE/help.html
 
